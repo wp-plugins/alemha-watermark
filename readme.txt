@@ -1,4 +1,4 @@
-=== Alemha watermarker ===
+=== Alemha watermark===
 Contributors: (mnbaaco)
 Tags: admin, gallery, image, media, photo, picture, signature, transparent, upload, watermark
 Requires at least: 3.0.1
@@ -58,7 +58,7 @@ you can use text watermark or image watermark or to combine both of them in thsa
      
 == Installation ==
 
-1.Upload `Alemha-watermarker` zip file to the `/wp-content/plugins/` directory
+1.Upload `Alemha-watermark` zip file to the `/wp-content/plugins/` directory
 2.Activate the plugin through the 'Plugins' menu in WordPress
 
   
