@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mnbaa_watermark\n"
+"POT-Creation-Date: 2014-09-21 08:35+0200\n"
+"PO-Revision-Date: 2014-09-21 08:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress-test\\wp-content\\plugins"
+"\\mnbaa_watermark\n"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:5
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:6
+msgid "Watermark text"
+msgstr "نص العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:12
+msgid "Image sizes"
+msgstr "أحجام الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:18
+msgid "Font type"
+msgstr "نوع الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:19
+msgid "Type of font."
+msgstr "نوع الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:53
+msgid "Font size"
+msgstr "حجم الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:54
+msgid "Size of font."
+msgstr "حجم الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:130
+msgid "Rotation"
+msgstr "الدوران"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:131
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:216
+msgid "Enter the value of the angle of rotation"
+msgstr "ادخل زاويه الدوران"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:137
+msgid "Transparency"
+msgstr "الشفافيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:143
+msgid "Position"
+msgstr "المكان"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:144
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:229
+msgid "Position of watermark"
+msgstr "مكان العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:149
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:234
+msgid "top"
+msgstr "أعلى"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:153
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:238
+msgid "bottom"
+msgstr "أسفل"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:158
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:193
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:267
+msgid "The Horizontal distance"
+msgstr "المسافه الافقيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:164
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:199
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:273
+msgid "The vertical distance"
+msgstr "المسافه الارأسيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:174
+msgid "Use background"
+msgstr "استخدام خلفيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:175
+msgid "Add background behidn your text"
+msgstr "اضافه خلفيه للنص"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:180
+msgid "yes"
+msgstr "نعم"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:184
+msgid "no"
+msgstr "لا"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:209
+msgid "Image"
+msgstr "الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:215
+msgid "Image Rotation"
+msgstr "دوران الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:222
+msgid "Image Transparency"
+msgstr "شفافيه الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:228
+msgid "Image Position"
+msgstr "مكان الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:244
+msgid "Image Size"
+msgstr "حجم الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:245
+msgid "Image size"
+msgstr "حجم الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/arrays.php:262
+msgid "Full Size"
+msgstr "حجم كامل"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/extended_upload.php:17
+msgid "Export"
+msgstr "تصدير"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:32
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:33
+msgid "Watermark"
+msgstr "العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:34
+msgid "Edit Watermark"
+msgstr "تعديل العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:35
+msgid "New Watermark"
+msgstr "علامه مائيه جديده"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:36
+msgid "All Watermarks"
+msgstr "العلامات المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:37
+msgid "View Watermark"
+msgstr "عرض العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:38
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:39
+msgid "Add New Watermark"
+msgstr "اضافه علامه مائيه جديده"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:44
+msgid "watermark"
+msgstr "العلامه المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:56
+msgid "Image sizes & Font Setting"
+msgstr "أحجام الصوره واعدادات الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:57
+msgid "Position Setting"
+msgstr "اعدادات المكان"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:58
+msgid "Background Setting"
+msgstr "اعدادات الخلفيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:59
+msgid "Upload Image"
+msgstr "رفع صوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:60
+msgid "Preview"
+msgstr "معاينه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:206
+msgid "Select watermark"
+msgstr "اختر علامه مائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:209
+msgid "Select your watermark"
+msgstr "اختر علامتك المائيه"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:237
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:238
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:239
+msgid "Categories"
+msgstr "الأقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:240
+msgid "All Categories"
+msgstr "جميع الأقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:241
+msgid "New Categories Name"
+msgstr "اسم الأقسام الجديده"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:242
+msgid "Add Categories Item"
+msgstr "أضافه أفسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:243
+msgid "Edit Categories"
+msgstr "تعديل الأقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:244
+msgid "Update Categories"
+msgstr "تعديل الأقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:245
+msgid "Separate Categories with commas"
+msgstr "فصل الأقسام بفاصله"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:246
+msgid "Search Categories"
+msgstr "البحث في الأقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:247
+msgid "Add or remove Categories"
+msgstr "أضافة أو حذف أقسام"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:248
+msgid "Choose from the most used Categories"
+msgstr "الاختيار ما بين أكثر الأقسام استخداما"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/helpers/wp_functions.php:249
+msgid "Not Found"
+msgstr "لا يوجد"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/views/background_setting.php:40
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/views/font_setting.php:56
+msgid "Select font color"
+msgstr "اختر لون الخط"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/views/img_upload.php:58
+msgid "Choose Image"
+msgstr "اختر الصوره"
+
+#: C:\wamp\www\wordpress-test\wp-content\plugins\mnbaa_watermark/views/img_upload.php:59
+msgid "Remove Image"
+msgstr "احذف الصوره"
