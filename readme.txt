@@ -74,7 +74,7 @@ you can use text watermark or image watermark or to combine both of them in thsa
 
 == Changelog ==
 
-= 1.0 =
+= 0.8 =
 * adding text signature 
 * adding image signature.
 
