@@ -50,7 +50,7 @@ global $img_upload_setting_meta_fields, $post;
 			break;
 			
 			case 'image':
-    $image = get_template_directory_uri().'/images/image.png';  
+    $image = plugins_url( 'images/noimage.jpg', dirname(__FILE__) );
     echo '<span class="custom_default_image" style="display:none">'.$image.'</span>';
     if ($img_meta) { $image = wp_get_attachment_image_src($img_meta, 'medium'); $image = $image[0]; }               
     echo    '<input name="'.$field['name'].'" type="hidden" class="custom_upload_image" value="'.$img_meta.'" />

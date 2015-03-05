@@ -15,23 +15,9 @@ jQuery(document).ready(function($){
 		$('.bg_tr').hide();
 	}
 	
-	
-	//
-	/*$("#txt_type").change(function() {
-		alert('hi');
-		$.ajax({
-			 url: myAjax.ajaxurl,
-			  data: {
-            action: "test",
-           
-        },
-		success: function(msg){
-			alert(msg);
-			 }
-	   });
-  });*/
-	
 });
+
+
 
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})|([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(hex);

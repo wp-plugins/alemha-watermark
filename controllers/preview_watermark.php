@@ -1,9 +1,11 @@
 <?php 
-$watermark = get_post($_POST['Mnbaa_watermark_select']); 
-//var_dump($watermark);
+if(!isset($attachment['Mnbaa_watermark_select']))
+	$watermark = get_post($_POST['attachments'][$attachment_id]['Mnbaa_watermark_select']); 
+else	
+	$watermark = get_post($attachment['Mnbaa_watermark_select']); 
 $upload_dir   = wp_upload_dir();
 global $dir_name;
-global $prefix;
+global $watermark_prefix;
 if(isset($preview)){
 	$new_image="index_".$post_id.".jpg";
 	$filepath = $dir_name."/images/".$new_image ;
@@ -22,20 +24,15 @@ if(isset($preview)){
 	}
 	
 	foreach($img_sizes as $attachment_size){
-	
-		/*$old_img = get_post((int) $post['ID']);
-		//var_dump($old_img);
-		$image_path=explode('/',$old_img->guid);
-		$image_name=end($image_path);
-		$filepath = $upload_dir['path'] . DIRECTORY_SEPARATOR . $image_name ;*/
-		$old_img=wp_get_attachment_image_src($post['ID'],$attachment_size);
+		
+		$old_img=wp_get_attachment_image_src($attachment_id,$attachment_size);
 		$image_path=explode('/',$old_img[0]);
 		$image_name=end($image_path);
 		$filepath2 = $upload_dir['path'] . DIRECTORY_SEPARATOR . $image_name ;
 		
 		$mime_type = wp_check_filetype($filepath2);
 		$extension = $mime_type['type'];
-		$new_image=$prefix.$image_name;
+		$new_image=$watermark_prefix.$image_name;
 		$filepath = $upload_dir['path'] . DIRECTORY_SEPARATOR.$new_image ;
 		copy($filepath2, $filepath);
 		

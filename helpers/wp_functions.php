@@ -8,30 +8,20 @@ function Mnbaa_Watermark_RunPlugin() {
 	add_action( 'admin_enqueue_scripts', 'Mnbaa_Watermark_load_admin_things' );
 	//save custom post
 	add_action('save_post', 'Mnbaa_Watermark_save_meta_box_data');
+	//applay watermark in media uploader popup
+	add_filter('media_send_to_editor', 'Mnbaa_Watermark_image', 10, 3);
 	// insert watermark button into edit page
 	add_filter('attachment_fields_to_edit', 'Mnbaa_Watermark_add_watermark_button', 10, 2);
-	//save image
-	add_filter( 'attachment_fields_to_save', 'Mnbaa_Watermark_applay_watermark', 10, 2 );
 	//watermark taxonomy
-	add_action( 'init', 'watermark_categories', 0 );
+	add_action( 'init', 'Mnbaa_Watermark_categories', 0 );
 	//remove premalink form watermark posts
 	add_action('admin_head', 'wpds_custom_admin_post_css');
+	//insert watermarek image in editor
+	add_filter('image_send_to_editor', 'Mnbaa_Watermark_image_to_editor', 20, 8);
+	//applay watermark in edit image
+	add_action( 'edit_attachment', 'Mnbaa_Watermark_edit_image');
 	
-	add_filter('image_send_to_editor', 'image_to_editor', 20, 8);
-	
-	add_action( 'edit_attachment', 'my_save_attachment_location' );
-	
-	//add_filter( 'get_media_item_args', 'force_send' );
-	
-	//add_filter('wp_insert_post_data', 'ccl', 99);
-	
-	//add_action( 'save_post', 'save_attachment' );
-	
-	//add_action( 'load-upload.php', 'export_media_test' );
-	
-	//add_filter('media_row_actions', 'Mnbaa_Watermark_add_watermark_button', 10, 2);
-	
-	//add_action('wp_ajax_test', 'test');
+	add_action('wp_ajax_get_watermark_image', 'get_watermark_image');
 }
 
 
@@ -60,7 +50,7 @@ function Mnbaa_Watermark_create_watermark() {
     );
 }
 
-// add three meta box  for watermark custom post
+// add 5 meta box  for watermark custom post
 function Mnbaa_Watermark_add_meta_box() {
 	
     add_meta_box('custom_meta_box', __('Image sizes & Font Setting', 'mnbaa_watermark'), 'font_setting_metabox_callback', 'watermark', 'normal');
@@ -192,11 +182,6 @@ function save_meta_box_data($fields,$post_id){
 			$old = get_post_meta($post_id, $field['name'], true);
 			$new = $_POST[$field['name']];
 			update_post_meta($post_id, $field['name'], $new);
-			/*if ($new && $new != $old) {
-				update_post_meta($post_id, $field['name'], $new);
-			} elseif ('' == $new && $old) {
-				delete_post_meta($post_id, $field['name'], $old);
-			}*/
 		}
         
     } 
@@ -215,7 +200,7 @@ function Mnbaa_Watermark_add_watermark_button($form_fields, $post) {
 	if(($media_type == 'image/jpeg') || $media_type=='image/png' || $media_type=='image/png' ){		
 		$form_fields["Mnbaa_watermark_select"]["label"] = __('Select watermark', 'mnbaa_watermark');
 		$form_fields["Mnbaa_watermark_select"]["input"] = "html";
-		$form_fields["Mnbaa_watermark_select"]["html"] = '<select name="Mnbaa_watermark_select" id="Mnbaa_watermark_select">';
+		$form_fields["Mnbaa_watermark_select"]["html"] = '<select name="attachments[' . $post->ID . '][Mnbaa_watermark_select]" id="Mnbaa_watermark_select" post_id="'.$post->ID.'">';
 		$form_fields["Mnbaa_watermark_select"]["html"] .= '<option value="">'.__("Select your watermark", 'mnbaa_watermark').'</option>';
 		while ( $query->have_posts() ) { $query->the_post();
 		if($Mnbaa_watermark_select == $query->post->ID)
@@ -230,44 +215,22 @@ function Mnbaa_Watermark_add_watermark_button($form_fields, $post) {
 		
 }
 
-function Mnbaa_Watermark_applay_watermark($post, $attachment){
-	/*if( isset($_POST['Mnbaa_watermark_select']) && $_POST['Mnbaa_watermark_select'] !=''){
-        update_post_meta($post['ID'], 'Mnbaa_watermark_select', $_POST['Mnbaa_watermark_select']);
-		include (plugin_dir_path(__FILE__) . '../controllers/preview_watermark.php');
-		
-  }*/
-  
-  if( isset($_POST['Mnbaa_watermark_select'])){
-        
-		if($_POST['Mnbaa_watermark_select']=='')
-			delete_post_meta($post['ID'], 'Mnbaa_watermark_select');
-		else
-			update_post_meta($post['ID'], 'Mnbaa_watermark_select', $_POST['Mnbaa_watermark_select']);	
-		if($_POST['Mnbaa_watermark_select'] !='')
-			include (plugin_dir_path(__FILE__) . '../controllers/preview_watermark.php');
-		
-  }
-  
-  //wp_safe_redirect( "upload.php" );
-    //return $post;
-}
-
-function my_save_attachment_location( $attachment_id ) {
+function Mnbaa_Watermark_edit_image( $attachment_id) {
 	
-    if( isset($_POST['Mnbaa_watermark_select'])){
+    if( isset($_POST['attachments'][$attachment_id]['Mnbaa_watermark_select'])){
         
-		if($_POST['Mnbaa_watermark_select']=='')
+		if($_POST['attachments'][$attachment_id]['Mnbaa_watermark_select']=='')
 			delete_post_meta($attachment_id, 'Mnbaa_watermark_select');
 		else
-			update_post_meta($attachment_id, 'Mnbaa_watermark_select', $_POST['Mnbaa_watermark_select']);	
-		if($_POST['Mnbaa_watermark_select'] !='')
+			update_post_meta($attachment_id, 'Mnbaa_watermark_select', $_POST['attachments'][$attachment_id]['Mnbaa_watermark_select']);	
+		if($_POST['attachments'][$attachment_id]['Mnbaa_watermark_select'] !='')
 			include (plugin_dir_path(__FILE__) . '../controllers/preview_watermark.php');
 		
   }
 }
 
 // Register Custom Taxonomy
-function watermark_categories() {
+function Mnbaa_Watermark_categories() {
 
 	$labels = array(
 		'name'                       => __( 'Categories', 'Categories', 'mnbaa_watermark' ),
@@ -308,57 +271,47 @@ function wpds_custom_admin_post_css() {
     }
 }
 
-//function save_attachment() {
-//	echo "hii";
-//	//wp_redirect("media_new.php");
-//
-//    /*
-//     * In production code, $slug should be set only once in the plugin,
-//     * preferably as a class property, rather than in each function that needs it.
-//     */
-//    //$slug = 'attachment';
-////
-////    // If this isn't a 'book' post, don't update it.
-////    if ( $slug == $_POST['post_type'] ) {
-////        wp_redirect("media_new.php");
-////    }
-//
-//}
+function Mnbaa_Watermark_image_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
+	global $watermark_prefix;
 
-//function ccl($data) {
-//	var_dump($data);
-//    if ($data['post_type'] == 'attachment') {
-//        add_filter('redirect_post_location', 'my_redirect_post_location_filter', 99);
-//    }
-//    return $data;
-//}
-//function my_redirect_post_location_filter($location) {
-//	wp_redirect("upload.php");
-//    /*remove_filter('redirect_post_location', __FUNCTION__, 99);
-//    $url='http://legalpropertieshub.com/master/wp-admin/edit.php';
-//    $location = add_query_arg('message', 99, $url);
-//    return $location;*/
-//}
-
-function image_to_editor($html, $id, $caption, $title, $align, $url, $size, $alt) {
-	global $prefix;
-	//$id=$id+1;
     $attachment = get_post($id); //fetching attachment by $id passed through
     $mime_type = $attachment->post_mime_type; //getting the mime-type
-	$img_name= explode("/",$url);
-    if (substr($mime_type, 0, 5) == 'image') { //checking mime-type
+    if (substr($mime_type, 0, 5) == 'image' && $attachment->post_parent !=0) { //checking mime-type
         
-		$watermark_select = get_post_meta( $id, 'Mnbaa_watermark_select' );
+		$watermark_select = get_post_meta( $id, 'Mnbaa_watermark_select',true );
 		$upload_dir = wp_upload_dir();	
-		//$html=$watermark_select;
 		if(isset($watermark_select) && !(empty ($watermark_select))){
 			
-			$watermark_img_name = $prefix.end($img_name);
-			$html = '<img src="'.$upload_dir['url'] . '/' . $watermark_img_name.'" />';
+			$image_attributes = wp_get_attachment_image_src( $id,$size );
+			$img_name= explode("/",$image_attributes[0]);
+			$watermark_img_name = $watermark_prefix.end($img_name);
+			
+			$html = '<img src="'.$upload_dir['url'] . '/' . $watermark_img_name.'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$alt.'" align="'.$align.'" />';
 			
 		}
         
     }
     return $html; // return new $html
 }
+
+function Mnbaa_Watermark_image($html, $send_id, $attachment) {
+	$attachment_id=$send_id;
+	
+    if( isset($attachment['Mnbaa_watermark_select'])){
+        
+		if($attachment['Mnbaa_watermark_select']=='')
+			delete_post_meta($attachment_id, 'Mnbaa_watermark_select');
+		else
+			update_post_meta($attachment_id, 'Mnbaa_watermark_select', $attachment['Mnbaa_watermark_select']);	
+		if($attachment['Mnbaa_watermark_select'] !=''){
+			include (plugin_dir_path(__FILE__) . '../controllers/preview_watermark.php');
+			
+		}
+		
+		
+  }
+  return $html;
+ 
+}
+
 ?>

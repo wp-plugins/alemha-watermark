@@ -592,7 +592,7 @@ class I18N_Arabic_Glyphs
     /**
      * Helper function for decodeEntities
      * 
-     * @param string $prefix    Prefix      
+     * @param string $watermark_prefix    Prefix      
      * @param string $codepoint Codepoint         
      * @param string $original  Original        
      * @param array  &$table    Store named entities in a table      
@@ -600,11 +600,11 @@ class I18N_Arabic_Glyphs
      * 
      * @return string                  
      */
-    protected function decodeEntities2($prefix, $codepoint, $original, 
+    protected function decodeEntities2($watermark_prefix, $codepoint, $original, 
                                        &$table, &$exclude)
     {
         // Named entity
-        if (!$prefix) {
+        if (!$watermark_prefix) {
             if (isset($table[$original])) {
                 return $table[$original];
             } else {
@@ -613,7 +613,7 @@ class I18N_Arabic_Glyphs
         }
         
         // Hexadecimal numerical entity
-        if ($prefix == '#x') {
+        if ($watermark_prefix == '#x') {
             $codepoint = base_convert($codepoint, 16, 10);
         }
         

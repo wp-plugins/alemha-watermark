@@ -1,3 +1,4 @@
+
 <?php 
 $mime_type = wp_check_filetype($filepath);
 $extension = $mime_type['type'];
@@ -182,6 +183,8 @@ if ($wm_bg=='yes') {
 			$watermark2 = imagecreatefromjpeg($wm_image);
 		}elseif($img_ext=='png'){
 			$watermark2 = imagecreatefrompng($wm_image);
+			imagealphablending($watermark2, true);
+			imagesavealpha($watermark2, true);
 		}elseif($img_ext=='gif'){
 			$watermark2 = imagecreatefromgif($wm_image);
 		}
@@ -190,13 +193,24 @@ if ($wm_bg=='yes') {
 		$watermark_rWidth2 = $wm_width2 * $factor;	
 		$watermark_rHeight2 = $wm_height2 * $factor;
 		$watermark_r2 = @imagecreatetruecolor($watermark_rWidth2, $watermark_rHeight2);
+		
+		if($img_ext=='png'){
+		
+			$bgc = imagecolorallocate($watermark_r2, 255, 255, 255);
+			imagecolortransparent($watermark_r2,$bgc);
+			imagefilledrectangle($watermark_r2, 0, 0, $watermark_rWidth2, $watermark_rHeight2, $bgc);
+			
+			imagealphablending($watermark_r2, true);
+			imagesavealpha($watermark_r2, true);
+		}
 		imagecopyresampled($watermark_r2, $watermark2, 0,0, 0, 0, $watermark_rWidth2, $watermark_rHeight2, $wm_width2, $wm_height2);
+		
 		//if ($wm_rotate_img != 0) {
 			//if (phpversion() >= 5.1) { 
 //					$bg2 = imagecolortransparent($watermark_r2);
 //					$watermark_r2 = imagerotate($watermark_r2, $wm_rotate_img, $bg2, 1);
 //			} else {
-					$white = imagecolorallocate($watermark_r, 255, 255, 255);
+					$white = imagecolorallocate($watermark_r2, 255, 255, 255);
 					$watermark_r2 = imagerotate($watermark_r2, $wm_rotate_img, $white,0);
 					$bg = imagecolortransparent($watermark_r2,$white);
 			//} 
@@ -236,6 +250,7 @@ if ($wm_bg=='yes') {
 		imagejpeg($im, $filepath, apply_filters( 'jpeg_quality', 90 ));
 	}elseif($extension=='image/png'){
 		imagepng($im,$filepath);
+		
 	}elseif($extension=='image/gif'){
 		imagegif($im,$filepath);
 	}
