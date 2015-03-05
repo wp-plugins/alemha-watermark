@@ -1,6 +1,4 @@
-
-<?php 
-$mime_type = wp_check_filetype($filepath);
+<?php $mime_type = wp_check_filetype($filepath);
 $extension = $mime_type['type'];
 $string	= $watermark->watermark_title;
 $font_color = explode(',' ,$watermark->rgb);
