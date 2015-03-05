@@ -21,24 +21,32 @@ you can make more than watermarek or signature for single site and categorize yo
 you can use text watermark or image watermark or to combine both of them in thsame watermark.
 
 **Plugin Features**
+
 1.Image sizes and font settings
+
    * Watermark text
    * Image sizes
    * Font type (6 diffrent fonts)
    * Font size
    * Font color
+
 2.position settings
+
    * Rotation of watermark (angel with degree)
    * Transparency (0% -100% )
    * Position (top- bottom)
    * The Horizontal distance (distance from left edge of image with pixles or percetage)
    * The vertical distance   (distance from top edge of image with pixles or percetage) 
-3.Watermark background settings 
+
+3.Watermark background settings
+ 
    * option to use background or not 
    * The Horizontal distance (width of background)
    * The vertical distance (hight of background)
    * Background color
+
 4.Image watermark 
+
    * upload watermark image or use image from media
    * image rotation with degree
    * Image Transparency (0%- 100%)
