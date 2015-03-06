@@ -68,6 +68,8 @@ you can use text watermark or image watermark or to combine both of them in thsa
 
 
 == Changelog ==
+= 1.2 =
+* fix watermarking issue 
 
 = 1.1 =
 * watermark categories 
