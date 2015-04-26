@@ -2,7 +2,7 @@
 Contributors: (mnbaaco)
 Tags: admin, gallery, image, media, photo, picture, signature, transparent, upload, watermark
 Requires at least: 3.0.1
-Tested up to: 4.1.1
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -68,6 +68,10 @@ you can use text watermark or image watermark or to combine both of them in thsa
 
 
 == Changelog ==
+
+= 1.3 =
+* wordpress 4.2 version compatibility.
+
 = 1.2 =
 * fix watermarking issue 
 

@@ -5,7 +5,7 @@
   Description: Allow you to add your watermark or signature to your website images both of text and image watermark are enabled.
   Author: Mnbaa CO
   Author URI: http://www.mnbaa.com
-  Version: 1.2
+  Version: 1.3
   Text Domian: mnbaa_watermark
   Domain Path: /languages/
  */
